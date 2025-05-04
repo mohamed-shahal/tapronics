@@ -13,6 +13,7 @@ export default function RegisterPage(){
     const [errorText,setErrorText] = useState('');
     let Name = firstName +" "+ lastName;
     const navigate = useNavigate();
+    const [infoText,setInfoText] = useState("");
 
     
     //check email availability
@@ -86,9 +87,10 @@ export default function RegisterPage(){
                         Name,
                     });
 
-                    setErrorText(`Your account has been created. A verification email has been sent — please check your inbox and verify your email before logging in.`);
+                    
                     await sendEmailVerification(user);
                     setStep(step+1);
+                    setInfoText(`Your account has been created. A verification email has been sent — please check your inbox and verify your email before logging in.`);
                 }
                 catch(error){
                     if(error.code === "auth/email-already-in-use"){
@@ -98,6 +100,7 @@ export default function RegisterPage(){
                         setErrorText(`${error}`);
                     }
                 }
+                
                 
             }
         }
@@ -166,9 +169,9 @@ export default function RegisterPage(){
 
                 {step === 3 && (
                     <>
-                <p className="text-xl">{errorText}</p>
+                <p className="text-xl">{infoText}</p>
                 <div className="flex justify-end w-[100%]">
-                <input className="bg-green-400 px-4 py-2 rounded" type="button" value="Login" onClick={navigate("/login")}  />
+                <input className="bg-green-400 px-4 py-2 rounded" type="button" value="Login" onClick={() => navigate("/login")}  />
                 </div>
                 </>
                 )}
