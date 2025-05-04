@@ -73,26 +73,27 @@ export default function ProfilePage(){
             setErrorText("Error in Logout")
         }
     }
-    let imageUrl = "";
+    
     const handleSave = async () => {
         try{
             if(!user){
                 setErrorText("User not Found")
                 return;
             }
+            setSaveState("Saving...");
+            let uploadedUrl = formData.dpUrl;
 
             const uploadData = new FormData();
             uploadData.append("file", file)
             uploadData.append("upload_preset", "unsigned_react_preset"); // replace this 
             uploadData.append("cloud_name", "dwqcjnvrb"); // replace this
-setSaveState("Saving...")
+
             try {
                 const response = await axios.post(
                   "https://api.cloudinary.com/v1_1/dwqcjnvrb/image/upload", // replace this
                   uploadData
                 );
-                const uploadedUrl = response.data.secure_url;
-                imageUrl = uploadedUrl;
+                uploadedUrl = response.data.secure_url;
                 setFormData(prev => ({ ...prev, dpUrl: uploadedUrl }));
     } catch (error) {
       console.error("Image upload failed:", error);
@@ -102,7 +103,7 @@ setSaveState("Saving...")
             const userRef = doc(db, "users", user);
             await setDoc(userRef, {
                 Name: formData.fullName,
-                dpUrl:imageUrl,
+                dpUrl:uploadedUrl,
                 role: formData.role,
                 Email: formData.email,
                 Mobile: formData.mobile,
