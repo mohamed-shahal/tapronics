@@ -89,7 +89,7 @@ useEffect(() => {
                 <img className="rounded-full ml-5 w-30 h-30 object-cover" src={formData.dpUrl} alt="" />
                 <div className="name  flex flex-col">
                     <p className="text-xl"><b>{formData.fullName}</b></p>
-                    <p className="text-lg">{errorText}</p>
+                    <p className="text-lg">{formData.role}</p>
                 </div>
             </div>
             
