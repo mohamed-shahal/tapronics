@@ -18,6 +18,8 @@ export default function DisplayPage(){
     ///////////////////////////////////////
     const [formData, setFormData] = useState({
         fullName: "",
+        role: "",
+        dpUrl: "",
         email: "",
         mobile: "",
         whatsapp: "",
@@ -37,6 +39,8 @@ export default function DisplayPage(){
                     const data = docSnap.data();
                     setFormData({
                         fullName: data.Name || "",
+                        dpUrl:data.dpUrl || "",
+                        role: data.role || "",
                         email: data.Email || "",
                         mobile: data.Mobile || "",
                         whatsapp: data.Whatsapp || "",
@@ -82,7 +86,7 @@ useEffect(() => {
         <div className="flex flex-col w-screen h-screen bg-white justify-between items-center">
             <div className="bg-green-400 w-full h-auto rounded-b-3xl"><LogoIcon className='w-40 ml-10' /></div>
             <div className="flex w-[100%] p-10 h-auto  justify-center  gap-5 text-black items-center">
-                <img className="rounded-full ml-5 w-30 h-30" src="https://nursinginstitutegoa.org/wp-content/uploads/2016/01/tutor-8.jpg" alt="" />
+                <img className="rounded-full ml-5 w-30 h-30 object-cover" src={formData.dpUrl} alt="" />
                 <div className="name  flex flex-col">
                     <p className="text-xl"><b>{formData.fullName}</b></p>
                     <p className="text-lg">{errorText}</p>
