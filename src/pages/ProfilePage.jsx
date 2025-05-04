@@ -142,7 +142,7 @@ export default function ProfilePage(){
         <div className="w-screen h-screen bg-white md:bg-green-400 relative flex justify-center items-center">
             <div className="bg-white p-5 text-black gap-5 flex flex-col justify-center items-center w-150 sm:w-200 h-auto rounded-xl text-sm">
                 <div className="dp flex justify-start items-center w-[100%] h-auto gap-3">
-                    <img className="rounded-full w-20 h-20 object-cover sm:w-25 sm:h-25 " src={formData.dpUrl || "https://nursinginstitutegoa.org/wp-content/uploads/2016/01/tutor-8.jpg"} alt=""  />
+                    <img className="rounded-full w-20 h-20 object-cover sm:w-25 sm:h-25 " src={formData.dpUrl || "https://t3.ftcdn.net/jpg/08/05/28/22/360_F_805282248_LHUxw7t2pnQ7x8lFEsS2IZgK8IGFXePS.jpg"} alt=""  />
                     <input className="border-black border-1 p-2 rounded w-[60%] h-8 leading-4" type="button" value="Select an Image" onClick={uploadFile} />
                     <input type="file" ref={fileInput} className="hidden" onChange={handleChange} />
                     <p>{fileName} {url}</p>

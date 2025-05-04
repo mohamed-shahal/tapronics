@@ -39,7 +39,7 @@ export default function DisplayPage(){
                     const data = docSnap.data();
                     setFormData({
                         fullName: data.Name || "",
-                        dpUrl:data.dpUrl || "",
+                        dpUrl:data.dpUrl || "https://t3.ftcdn.net/jpg/08/05/28/22/360_F_805282248_LHUxw7t2pnQ7x8lFEsS2IZgK8IGFXePS.jpg",
                         role: data.role || "",
                         email: data.Email || "",
                         mobile: data.Mobile || "",

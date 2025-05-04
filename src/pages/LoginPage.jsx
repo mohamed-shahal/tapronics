@@ -2,6 +2,7 @@ import { useState } from "react"
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../config/firebase";
 import { useNavigate } from "react-router-dom";
+import GoogleLoginButton from "../components/GoogleLoginButton";
 export default function LoginPage(){
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
@@ -41,8 +42,9 @@ export default function LoginPage(){
                 </div>
                 <div className="flex justify-between w-[100%]">
                 <input className="bg-green-400 px-4 py-2 rounded" type="button" value="Register" onClick={() => navigate("/register")}/>
-                <input className="bg-green-400 px-4 py-2 rounded" type="button" value="Login" onClick={handleLogin}/>
+                <input className="bg-green-400 px-4 py-2 rounded" type="button" value="Login" onClick={handleLogin}/> 
                 </div>
+                <GoogleLoginButton />
             </div>
         </div>
         </>
