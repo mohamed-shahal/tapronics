@@ -1,12 +1,14 @@
-# React + Vite
+# Tapronics
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Tapronics is an NFC card-based vCard platform built with **React**, **Vite**, and **Firebase**. Users can create and share digital business cards using NFC cards. All data is securely stored and synced using Firebase.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Create and manage your digital vCard
+- Share vCards via NFC cards
+- Uses Firebase for backend services and data storage
+- Simple, fast, and user-friendly interface
 
-## Expanding the ESLint configuration
+## Live Demo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Check it out here: [https://tapronics.vercel.app/login](https://tapronics.vercel.app/login)
